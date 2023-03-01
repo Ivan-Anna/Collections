@@ -5,6 +5,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,7 +62,7 @@ public class Main {
 
         // LikedList on practice
 
-        LinkedList<Car> cars= new LinkedList<>();
+        /*LinkedList<Car> cars= new LinkedList<>();
         Car ferrari = new Car("Ferraru Spider");
         Car mercedes = new Car("Mercedes benz");
         Car bugatti = new Car("Veyron");
@@ -72,10 +73,35 @@ public class Main {
         cars.addFirst(new Car ("Ford"));
         cars.addLast(new Car ("Fiat"));
         System.out.println(cars.pollFirst());
-        System.out.println(cars);
+        System.out.println(cars);*/
 
+        // ArrayList vs LinkedList
 
+        List<Integer> list = new LinkedList<>();
 
+        for(int i=0; i < 5000000; i++) {
+            list.add(new Integer(1));
+        }
+            long start = System.currentTimeMillis();
+
+            for( int i = 0; i<100; i++){
+            list.add(2000000, Integer.MAX_VALUE);
+            }
+
+        System.out.println("Время работы для linkedList в (миллисекундах)" + (System.currentTimeMillis() - start));
+
+            list = new ArrayList<>();
+
+        for(int i=0; i < 5000000; i++) {
+            list.add(new Integer(1));
+        }
+        start = System.currentTimeMillis();
+
+        for( int i = 0; i<100; i++){
+            list.add(2000000, Integer.MAX_VALUE);
+        }
+
+        System.out.println("Время работы для ArrayList в (миллисекундах)" + (System.currentTimeMillis() - start));
 
 
 
