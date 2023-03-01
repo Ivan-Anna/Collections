@@ -1,3 +1,4 @@
+import ru.synergy.Car;
 import ru.synergy.Cat;
 
 import java.lang.reflect.Array;
@@ -44,7 +45,7 @@ public class Main {
 
         //LinkedList
 
-        String str1 = new String("Hello world");
+        /*String str1 = new String("Hello world");
         String str2 = new String("My name is Ivan");
         String str3 = new String("i love java");
 
@@ -56,6 +57,29 @@ public class Main {
         System.out.println(IvanBio);
 
         IvanBio.remove(1);
-        System.out.println(IvanBio);
+        System.out.println(IvanBio);*/
+
+        // LikedList on practice
+
+        LinkedList<Car> cars= new LinkedList<>();
+        Car ferrari = new Car("Ferraru Spider");
+        Car mercedes = new Car("Mercedes benz");
+        Car bugatti = new Car("Veyron");
+
+        cars.addAll(Arrays.asList(ferrari, mercedes, bugatti));
+        System.out.println(cars);
+
+        cars.addFirst(new Car ("Ford"));
+        cars.addLast(new Car ("Fiat"));
+        System.out.println(cars.pollFirst());
+        System.out.println(cars);
+
+
+
+
+
+
+
+
     }
 }
