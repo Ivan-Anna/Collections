@@ -1,5 +1,6 @@
 package ru.synergy;
 
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Cat  implements Comparable <Cat>{
@@ -41,8 +42,4 @@ public class Cat  implements Comparable <Cat>{
     public int compareTo(Cat o) {
         return this.name.compareTo(o.name);
     }
-
-    // map
-
-
 }
