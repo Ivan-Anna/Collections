@@ -2,16 +2,13 @@ import ru.synergy.Car;
 import ru.synergy.Cat;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
         // Arrays
-/*        Cat[] cats = new Cat[4];
+       Cat[] cats = new Cat[4];
         cats[0] = new Cat("Tomas");
         cats[1] = new Cat("Бегемот");
         cats[2] = new Cat("Филипп");
@@ -19,17 +16,17 @@ public class Main {
 
        // cats[1] = null;
 
-        System.out.println(Arrays.toString(cats));*/
+        System.out.println(Arrays.toString(cats));
 
         // ArrayList
-        /*ArrayList<Cat> catsList = new ArrayList();
+        ArrayList<Cat> catsList = new ArrayList();
         for (Cat cat : cats){
             catsList.add(cat);
         }
 
-        catsList.add( new Cat("Бегемот2"));
+        catsList.add( new Cat("Бегемот"));
 
-        catsList.remove(1);
+        // catsList.remove(1);
 
         Cat cat = catsList.get(0);
         System.out.println(cat);
@@ -38,15 +35,15 @@ public class Main {
         catsList.add(2, cat);
         catsList.set(2, new Cat("Меня сюда вставили"));
 
-        catsList.removeAll(Arrays.asList(cat, catsList.get(3)));
+        // catsList.removeAll(Arrays.asList(cat, catsList.get(3)));
 
         System.out.println(catsList.toString());
 
-        System.out.println(catsList.size());*/
+        System.out.println(catsList.size());
 
         //LinkedList
 
-        /*String str1 = new String("Hello world");
+        String str1 = new String("Hello world");
         String str2 = new String("My name is Ivan");
         String str3 = new String("i love java");
 
@@ -58,7 +55,7 @@ public class Main {
         System.out.println(IvanBio);
 
         IvanBio.remove(1);
-        System.out.println(IvanBio);*/
+        System.out.println(IvanBio);
 
         // LikedList on practice
 
@@ -77,7 +74,7 @@ public class Main {
 
         // ArrayList vs LinkedList
 
-        List<Integer> list = new LinkedList<>();
+        /*List<Integer> list = new LinkedList<>();
 
         for(int i=0; i < 5000000; i++) {
             list.add(new Integer(1));
@@ -102,10 +99,29 @@ public class Main {
         }
 
         System.out.println("Время работы для ArrayList в (миллисекундах)" + (System.currentTimeMillis() - start));
+*/
+        // Set
+        Set<String> states = new HashSet<>();
+        states.add("Germany");
+        states.add("France");
+        states.add("Italy");
 
+        boolean isAdded = states.add("Italy");
+        System.out.println("Italy is added: "+ isAdded);
+        System.out.println("Set contains: " + states.size());
 
+        System.out.println(states);
 
+        states.remove(("Germany"));
 
+        System.out.println(states);
 
+        HashSet<Cat> catHashSet = new HashSet(catsList);
+
+        System.out.println(catHashSet);
+
+        TreeSet<Cat> catTreeSet = new TreeSet(catsList);
+
+        System.out.println(catTreeSet);
     }
 }
